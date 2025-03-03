@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxsistemaestacionamientojets.controladores.FXMLCobrarTarjetaController">
+   <children>
+      <Pane prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: silver;">
+         <children>
+            <Label fx:id="lbTitulo" layoutX="56.0" layoutY="-4.0" text="Cobrar tarjeta">
+               <font>
+                  <Font name="Trebuchet MS Bold" size="50.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="53.0" fitWidth="89.0" layoutX="3.0" layoutY="-2.0" onMouseClicked="#clicRegresar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../recursos/flecha.png" />
+               </image>
+            </ImageView>
+            <TabPane layoutX="3.0" layoutY="60.0" prefHeight="603.0" prefWidth="1100.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Detalles de la tarjeta">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="1100.0">
+                           <children>
+                              <Pane layoutY="-2.0" prefHeight="555.0" prefWidth="1095.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <Label layoutX="30.0" layoutY="29.0" text="Código de la tarjeta:">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="tfIngresarIDTarjeta" layoutX="235.0" layoutY="25.0" prefHeight="39.0" prefWidth="574.0" promptText="Ingrese el código de la tarjeta" />
+                                    <Button fx:id="btnMostrar" layoutX="842.0" layoutY="25.0" mnemonicParsing="false" onAction="#clicMostrar" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: #928978;" text="Mostrar" />
+                                    <Label fx:id="lblTarifaCobrar" layoutX="640.0" layoutY="348.0" text="Tarifa a cobrar: XXX">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="cbMulta" layoutX="753.0" layoutY="161.0" prefHeight="39.0" prefWidth="235.0" promptText="Seleccione una multa" />
+                                    <ComboBox fx:id="cbMetodoPago" layoutX="728.0" layoutY="230.0" prefHeight="39.0" prefWidth="284.0" promptText="Asigne un Método de Pago" />
+                                    <Button fx:id="btnCobrar" layoutX="876.0" layoutY="427.0" mnemonicParsing="false" onAction="#clicCobrarTarjeta" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #009EFF;" text="Cobrar" textFill="WHITE" />
+                                    <Button fx:id="btnCancelar" layoutX="674.0" layoutY="427.0" mnemonicParsing="false" onAction="#clicCancelarCobro" prefHeight="39.0" prefWidth="123.0" style="-fx-background-color: RED;" text="Cancelar" textFill="WHITE" />
+                                    <Button fx:id="btnIniciarProcesoPago" layoutX="771.0" layoutY="97.0" mnemonicParsing="false" onAction="#clicIniciarPago" style="-fx-background-color: #009EFF;" text="Iniciar Proceso de Pago" textFill="WHITE" />
+                                    <Button fx:id="btnTarjetaPerdida" layoutX="753.0" layoutY="477.0" mnemonicParsing="false" onAction="#clicTarjetaPerdida" prefHeight="39.0" prefWidth="178.0" style="-fx-background-color: #FFAA00;" text="Tarjeta pérdida" textFill="WHITE" />
+                                    <Pane fx:id="pnDatosTarjeta" layoutX="14.0" layoutY="103.0" prefHeight="308.0" prefWidth="300.0" style="-fx-background-color: DDDCDC;">
+                                       <children>
+                                          <Label fx:id="lblHoraEntrada" contentDisplay="CENTER" layoutX="56.0" layoutY="111.0" text="Hora de entrada: XXX" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="MS PGothic" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblFechaEntrada" contentDisplay="CENTER" layoutX="51.0" layoutY="162.0" text="Fecha de entrada: XXX" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="MS PGothic" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblCajon" contentDisplay="CENTER" layoutX="95.0" layoutY="264.0" text="Cajón: XXX" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="MS PGothic" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblNivel" contentDisplay="CENTER" layoutX="98.0" layoutY="215.0" text="Nivel: XXX" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="MS PGothic" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblCodigo" alignment="CENTER" contentDisplay="CENTER" layoutX="56.0" layoutY="14.0" text="Código: XXX" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="MS PGothic" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblTipoVehiculo" alignment="CENTER" contentDisplay="CENTER" layoutX="54.0" layoutY="60.0" text="Tipo de vehículo: XXX" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="MS PGothic" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="pnDetallesCobro" layoutX="314.0" layoutY="171.0" prefHeight="240.0" prefWidth="300.0" style="-fx-background-color: B3B3B3;">
+                                       <children>
+                                          <Label fx:id="lblTiempoTranscurrido" alignment="CENTER" contentDisplay="CENTER" layoutX="81.0" layoutY="195.0" text="Tiempo total: XXX" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="MS PGothic" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblFechaSalida" contentDisplay="CENTER" layoutX="70.0" layoutY="80.0" text="Fecha de Salida: XXX" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="MS PGothic" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblHoraSalida" contentDisplay="CENTER" layoutX="74.0" layoutY="30.0" text="Hora de Salida: XXX" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="MS PGothic" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblTotalHoras" contentDisplay="CENTER" layoutX="75.0" layoutY="134.0" text="Total de horas: XXX" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="MS PGothic" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
